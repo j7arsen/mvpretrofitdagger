@@ -1,0 +1,84 @@
+package j7arsen.com.dagger.rest.error;
+
+import android.app.Activity;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import j7arsen.com.dagger.R;
+
+
+public class ProgressDialog extends DialogFragment {
+
+    public static final String TAG = "ProgressDialog.TAG";
+
+    @Bind(R.id.rl_dialog_progress)
+    RelativeLayout rlProgress;
+    @Bind(R.id.pb_dialog_load)
+    ProgressBar pbLoad;
+    @Bind(R.id.ll_dialog_progress_error)
+    LinearLayout llError;
+    @Bind(R.id.tv_dialog_progress_error)
+    TextView tvError;
+
+    private int mErrorCode;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+    }
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.dialog_progress, null);
+        ButterKnife.bind(this, view);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.Theme_Dialog);
+        builder.setView(view);
+        return builder.create();
+    }
+
+    @OnClick(R.id.btn_dialog_progress_ok) void okClick(){
+        ProgressDialogManager.getInstance().unsubscribe();
+    }
+
+
+    public void startLoading() {
+        setCancelable(false);
+    }
+
+    public void completeLoading() {
+        setCancelable(true);
+        rlProgress.setVisibility(View.GONE);
+        llError.setVisibility(View.GONE);
+        pbLoad.setVisibility(View.GONE);
+    }
+
+    public void errorLoading(ErrorHandler errorHandler) {
+        tvError.setText(errorHandler.getMessage());
+        mErrorCode = errorHandler.getErrorCode();
+        setCancelable(true);
+        rlProgress.setVisibility(View.VISIBLE);
+        llError.setVisibility(View.VISIBLE);
+        pbLoad.setVisibility(View.GONE);
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        ButterKnife.unbind(this);
+        super.onDestroyView();
+    }
+
+}

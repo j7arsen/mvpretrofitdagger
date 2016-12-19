@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">NewDaggerProject</string>
+
+    <string name="message.error.connect">Нет интернет соединения. Включите интернет и попробуйте снова.</string>
+    <string name="message.error.default">Сервер не доступен. Попробуйте позже.</string>
+    <string name="message.error.socket">Слишком медленный интернет. Попробуйте другой.</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title.menu.company">Компания</string>
+    <string name="title.menu.news">Новости</string>
+    <string name="title.menu.calendar">Налоговый календарь</string>
+    <string name="title.menu.library">Библиотека</string>
+    <string name="title.menu.map">На карте</string>
+    <string name="title.menu.bank.requisites">Реквизиты Банка</string>
+    <string name="title.menu.settings">Настройки</string>
+    <string name="title.menu.help">Помощь</string>
+    <string name="title.menu.about">О программе</string>
+    <string name="title.menu.logout">Выйти</string>
+    <string name="title.menu.login">Войти</string>
+
+</resources>
