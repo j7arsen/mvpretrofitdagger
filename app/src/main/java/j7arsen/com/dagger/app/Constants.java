@@ -10,6 +10,8 @@ public class Constants {
     public static final int WRITE_TIMEOUT = 60;
     public static final int TIMEOUT = 60;
 
+    public static final int SPLASH_TIMEOUT = 5;
+
 
 
 }

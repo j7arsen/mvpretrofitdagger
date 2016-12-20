@@ -1,9 +1,13 @@
 package j7arsen.com.dagger.rest;
 
 
+import java.util.concurrent.TimeUnit;
+
+import j7arsen.com.dagger.app.Constants;
 import j7arsen.com.dagger.rest.observable.IRequestCallback;
 import j7arsen.com.dagger.rest.service.GetUserService;
 import retrofit2.Retrofit;
+import rx.Observable;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -34,6 +38,10 @@ public class RequestManager {
         this.mRetrofit = retrofit;
     }
 
+    public void getSplashTimer(int action, IRequestCallback requestCallback){
+        mSubscription = Observable.timer(Constants.SPLASH_TIMEOUT, TimeUnit.SECONDS).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(a -> successResponse(requestCallback, null), e -> onError(requestCallback, action, e));
+    }
+
     public <S> S createService(Class<S> serviceClass) {
         return mRetrofit.create(serviceClass);
     }
@@ -42,10 +50,6 @@ public class RequestManager {
         mSubscription = createService(serviceClass).getUserData().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(s -> successResponse(requestCallback, new Pair(s)), e -> onError(requestCallback, action, e));
         addSubscription(mSubscription);
-    }
-
-    public String getTestString(){
-        return "Hello";
     }
 
     private void successResponse(IRequestCallback callback, Pair object){

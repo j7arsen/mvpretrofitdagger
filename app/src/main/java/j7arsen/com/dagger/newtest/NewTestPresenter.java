@@ -58,7 +58,7 @@ public class NewTestPresenter implements INewTestContract.Presenter, IObserver {
             case Action.GET_USER_DATA:
                 mNewTestView.completeLoading();
                 Pair pair = (Pair) objects;
-                mNewTestView.fillView((UserData) pair.getObject());
+                mNewTestView.fillView((UserData) pair.getValue());
                 break;
         }
     }
@@ -74,7 +74,7 @@ public class NewTestPresenter implements INewTestContract.Presenter, IObserver {
 
     @Override
     public void destroy() {
-        TestObservable.getInstance().removeObserver(this);
+        mObservable.removeObserver(this);
         mNewTestView = null;
         mNewTestInteractor = null;
     }

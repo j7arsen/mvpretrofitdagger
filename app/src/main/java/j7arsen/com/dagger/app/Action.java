@@ -6,6 +6,7 @@ package j7arsen.com.dagger.app;
 
 public class Action {
 
+    public static final int SPLASH_TIMER = 10000;
     public static final int GET_USER_DATA = 10001;
 
 }

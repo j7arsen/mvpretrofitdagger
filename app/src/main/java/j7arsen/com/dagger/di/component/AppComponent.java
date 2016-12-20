@@ -8,6 +8,7 @@ import dagger.Component;
 import j7arsen.com.dagger.di.module.AppModule;
 import j7arsen.com.dagger.di.module.NetModule;
 import j7arsen.com.dagger.di.module.SourceModule;
+import j7arsen.com.dagger.managers.DataHelper;
 import j7arsen.com.dagger.managers.DataManager;
 import j7arsen.com.dagger.rest.RequestManager;
 import j7arsen.com.dagger.rest.observable.TestObservable;
@@ -22,6 +23,7 @@ public interface AppComponent {
 
     Context provideContext();
     Retrofit provideRetrofit();
+    DataHelper provideDataHelper();
     DataManager provideDataManager();
     RequestManager provideRequestManager();
     TestObservable provideTestIObservable();
