@@ -3,6 +3,7 @@ package j7arsen.com.dagger.splashscreen;
 import j7arsen.com.dagger.base.contract.IBaseInteractor;
 import j7arsen.com.dagger.base.contract.IBasePresenter;
 import j7arsen.com.dagger.base.contract.IBaseView;
+import rx.Observable;
 
 
 /**
@@ -20,7 +21,7 @@ public interface ISplashScreenContract {
     }
 
     interface Interactor extends IBaseInteractor {
-        void getTimerSplash();
+        Observable getTimerSplash();
     }
 
 }

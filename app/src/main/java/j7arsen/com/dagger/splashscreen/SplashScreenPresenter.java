@@ -2,21 +2,19 @@ package j7arsen.com.dagger.splashscreen;
 
 import javax.inject.Inject;
 
-import j7arsen.com.dagger.app.Action;
-import j7arsen.com.dagger.rest.observable.IObserver;
-import j7arsen.com.dagger.rest.observable.TestObservable;
+import rx.Subscription;
+import rx.subscriptions.Subscriptions;
 
 /**
  * Created by arsen on 20.12.16.
  */
 
-public class SplashScreenPresenter implements ISplashScreenContract.Presenter, IObserver {
+public class SplashScreenPresenter implements ISplashScreenContract.Presenter {
 
     private ISplashScreenContract.View mSplashView;
     private ISplashScreenContract.Interactor mSplashInteractor;
 
-    @Inject
-    TestObservable mObservable;
+    private Subscription mSubscription = Subscriptions.empty();
 
     @Inject public SplashScreenPresenter(ISplashScreenContract.View splashView, ISplashScreenContract.Interactor splashInteractor){
         this.mSplashView = splashView;
@@ -25,31 +23,25 @@ public class SplashScreenPresenter implements ISplashScreenContract.Presenter, I
 
     @Override
     public void onCreate() {
-        mObservable.addObserver(this);
-        mSplashInteractor.getTimerSplash();
+       mSubscription = mSplashInteractor.getTimerSplash().subscribe(aLong -> openMainScreen());
     }
 
-    @Override
-    public void onStartRequest(int action) {
-
+    private void openMainScreen(){
+        unsubcribe();
+        if(mSplashView != null){
+            mSplashView.openMainScreen();
+        }
     }
 
-    @Override
-    public void onSuccess(int actionCode, Object objects) {
-        switch (actionCode){
-            case Action.SPLASH_TIMER:
-                mSplashView.openMainScreen();
-                break;
+    private void unsubcribe(){
+        if(!mSubscription.isUnsubscribed()){
+            mSubscription.unsubscribe();
         }
     }
 
     @Override
-    public void onFail(int action, Throwable e) {
-    }
-
-    @Override
     public void destroy() {
-        mObservable.removeObserver(this);
+        unsubcribe();
         mSplashView = null;
         mSplashInteractor = null;
     }
