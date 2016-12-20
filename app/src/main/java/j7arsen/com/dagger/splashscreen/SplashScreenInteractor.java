@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import j7arsen.com.dagger.rest.RequestManager;
 import j7arsen.com.dagger.rest.observable.TestObservable;
-import j7arsen.com.dagger.rest.request.GetSplashTimer;
+import j7arsen.com.dagger.rest.request.GetSplashTimerRequest;
 
 /**
  * Created by arsen on 20.12.16.
@@ -22,6 +22,6 @@ public class SplashScreenInteractor implements ISplashScreenContract.Interactor 
 
     @Override
     public void getTimerSplash() {
-        new GetSplashTimer(mRequestManager, mObservable).splashTimer();
+        new GetSplashTimerRequest(mRequestManager, mObservable).splashTimer();
     }
 }

@@ -11,9 +11,9 @@ import j7arsen.com.dagger.rest.observable.TestObservable;
  * Created by arsen on 20.12.16.
  */
 
-public class GetSplashTimer extends BaseRequest implements IRequestCallback{
+public class GetSplashTimerRequest extends BaseRequest implements IRequestCallback{
 
-    public GetSplashTimer(RequestManager manager, TestObservable observable){
+    public GetSplashTimerRequest(RequestManager manager, TestObservable observable){
         super(manager, observable);
     }
 
