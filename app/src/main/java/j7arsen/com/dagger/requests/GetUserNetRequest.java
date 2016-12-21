@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.rest.request;
+package j7arsen.com.dagger.requests;
 
 import j7arsen.com.dagger.app.Action;
 import j7arsen.com.dagger.base.BaseRequest;
@@ -11,9 +11,9 @@ import j7arsen.com.dagger.rest.service.GetUserService;
  * Created by arsen on 19.12.16.
  */
 
-public class GetUserRequest extends BaseRequest {
+public class GetUserNetRequest extends BaseRequest {
 
-    public GetUserRequest(DataManager manager, ISubject observable){
+    public GetUserNetRequest(DataManager manager, ISubject observable){
         super(manager, observable);
     }
 

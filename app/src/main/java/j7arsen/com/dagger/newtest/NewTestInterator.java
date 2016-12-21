@@ -3,9 +3,8 @@ package j7arsen.com.dagger.newtest;
 import javax.inject.Inject;
 
 import j7arsen.com.dagger.managers.DataManager;
-import j7arsen.com.dagger.rest.RequestManager;
 import j7arsen.com.dagger.rest.observable.TestObservable;
-import j7arsen.com.dagger.rest.request.GetUserRequest;
+import j7arsen.com.dagger.requests.GetUserNetRequest;
 
 /**
  * Created by arsen on 15.12.16.
@@ -23,7 +22,7 @@ public class NewTestInterator implements INewTestContract.Interactor {
 
     @Override
     public void getUser() {
-        new GetUserRequest(mDataManager, mObservable).getUserData();
+        new GetUserNetRequest(mDataManager, mObservable).getUserData();
     }
 
 }
