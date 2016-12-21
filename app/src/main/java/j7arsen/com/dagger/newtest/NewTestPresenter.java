@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import j7arsen.com.dagger.app.Action;
 import j7arsen.com.dagger.base.BasePresenter;
 import j7arsen.com.dagger.data.UserData;
-import j7arsen.com.dagger.rest.Pair;
+import j7arsen.com.dagger.data.Pair;
 
 /**
  * Created by arsen on 15.12.16.

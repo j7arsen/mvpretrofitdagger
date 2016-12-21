@@ -3,7 +3,7 @@ package j7arsen.com.dagger.requests;
 import j7arsen.com.dagger.app.Action;
 import j7arsen.com.dagger.base.BaseRequest;
 import j7arsen.com.dagger.managers.DataManager;
-import j7arsen.com.dagger.rest.Pair;
+import j7arsen.com.dagger.data.Pair;
 import j7arsen.com.dagger.observable.ISubject;
 import j7arsen.com.dagger.rest.service.GetUserService;
 

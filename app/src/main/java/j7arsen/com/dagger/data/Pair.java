@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.rest;
+package j7arsen.com.dagger.data;
 
 /**
  * Created by arsen on 15.12.16.
