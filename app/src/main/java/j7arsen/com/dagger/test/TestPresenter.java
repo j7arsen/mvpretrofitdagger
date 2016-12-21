@@ -33,7 +33,7 @@ public class TestPresenter implements ITestContract.Presenter {
     }
 
     @Override
-    public void destroy() {
+    public void onDestroy() {
         mTestView = null;
     }
 }

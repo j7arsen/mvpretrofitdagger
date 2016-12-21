@@ -40,7 +40,7 @@ public class SplashScreenPresenter implements ISplashScreenContract.Presenter {
     }
 
     @Override
-    public void destroy() {
+    public void onDestroy() {
         unsubcribe();
         mSplashView = null;
         mSplashInteractor = null;

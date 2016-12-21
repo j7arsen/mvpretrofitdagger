@@ -6,6 +6,6 @@ package j7arsen.com.dagger.base.contract;
 
 public interface IBasePresenter {
 
-    void destroy();
+    void onDestroy();
 
 }

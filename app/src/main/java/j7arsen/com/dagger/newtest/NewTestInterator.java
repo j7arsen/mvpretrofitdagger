@@ -2,6 +2,7 @@ package j7arsen.com.dagger.newtest;
 
 import javax.inject.Inject;
 
+import j7arsen.com.dagger.managers.DataManager;
 import j7arsen.com.dagger.rest.RequestManager;
 import j7arsen.com.dagger.rest.observable.TestObservable;
 import j7arsen.com.dagger.rest.request.GetUserRequest;
@@ -12,17 +13,17 @@ import j7arsen.com.dagger.rest.request.GetUserRequest;
 
 public class NewTestInterator implements INewTestContract.Interactor {
 
-    private RequestManager mRequestManager;
+    private DataManager mDataManager;
     private TestObservable mObservable;
 
-    @Inject public NewTestInterator(RequestManager manager, TestObservable observable){
-        this.mRequestManager = manager;
+    @Inject public NewTestInterator(DataManager manager, TestObservable observable){
+        this.mDataManager = manager;
         this.mObservable = observable;
     }
 
     @Override
     public void getUser() {
-        new GetUserRequest(mRequestManager, mObservable).getUserData();
+        new GetUserRequest(mDataManager, mObservable).getUserData();
     }
 
 }

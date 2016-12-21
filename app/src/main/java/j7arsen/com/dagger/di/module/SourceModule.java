@@ -24,14 +24,14 @@ public class SourceModule {
 
     @Provides
     @Singleton
-    DataManager provideDataManager(DataHelper dataHelper){
-        return DataManager.getInstance(dataHelper);
+    RequestManager provideRequestManager(Retrofit retrofit){
+        return RequestManager.getInstance(retrofit);
     }
 
     @Provides
     @Singleton
-    RequestManager provideRequestManager(Retrofit retrofit){
-        return RequestManager.getInstance(retrofit);
+    DataManager provideDataManager(DataHelper dataHelper, RequestManager manager){
+        return DataManager.getInstance(dataHelper, manager);
     }
 
     @Provides

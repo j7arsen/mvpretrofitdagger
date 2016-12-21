@@ -15,7 +15,6 @@ import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.base.BaseFragment;
 import j7arsen.com.dagger.newtest.NewTestActivity;
-import j7arsen.com.dagger.second.SecondActivity;
 
 /**
  * Created by Arsen on 06.10.2016.
@@ -95,6 +94,6 @@ public class TestFragment extends BaseFragment implements ITestContract.View{
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mPresenter.destroy();
+        mPresenter.onDestroy();
     }
 }

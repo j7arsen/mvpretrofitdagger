@@ -26,6 +26,7 @@ public class SecondPresenter implements ISecondContract.Presenter {
         mSecondView.setPresenter(this);
     }
 
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt(SAVE_INDEX, mIndex);
@@ -45,7 +46,7 @@ public class SecondPresenter implements ISecondContract.Presenter {
 
 
     @Override
-    public void destroy() {
+    public void onDestroy() {
         mSecondView = null;
     }
 }

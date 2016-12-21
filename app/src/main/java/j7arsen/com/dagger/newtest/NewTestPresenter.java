@@ -3,22 +3,18 @@ package j7arsen.com.dagger.newtest;
 import javax.inject.Inject;
 
 import j7arsen.com.dagger.app.Action;
+import j7arsen.com.dagger.base.BasePresenter;
 import j7arsen.com.dagger.data.UserData;
 import j7arsen.com.dagger.rest.Pair;
-import j7arsen.com.dagger.rest.observable.IObserver;
-import j7arsen.com.dagger.rest.observable.TestObservable;
 
 /**
  * Created by arsen on 15.12.16.
  */
 
-public class NewTestPresenter implements INewTestContract.Presenter, IObserver {
+public class NewTestPresenter extends BasePresenter implements INewTestContract.Presenter {
 
     private INewTestContract.View mNewTestView;
     private INewTestContract.Interactor mNewTestInteractor;
-
-    @Inject
-    TestObservable mObservable;
 
     @Inject
     public NewTestPresenter(INewTestContract.View view, INewTestContract.Interactor interactor) {
@@ -33,7 +29,7 @@ public class NewTestPresenter implements INewTestContract.Presenter, IObserver {
 
     @Override
     public void onCreate() {
-        mObservable.addObserver(this);
+        super.onCreate();
     }
 
     @Override
@@ -72,9 +68,10 @@ public class NewTestPresenter implements INewTestContract.Presenter, IObserver {
         }
     }
 
+
     @Override
-    public void destroy() {
-        mObservable.removeObserver(this);
+    public void onDestroy() {
+        super.onDestroy();
         mNewTestView = null;
         mNewTestInteractor = null;
     }

@@ -117,6 +117,6 @@ public class NewTestFragment extends BaseFragment implements INewTestContract.Vi
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mPresenter.destroy();
+        mPresenter.onDestroy();
     }
 }

@@ -9,7 +9,7 @@ import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.app.TestApplication;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.di.component.AppComponent;
-import j7arsen.com.dagger.newtest.NewTestActivity;
+import j7arsen.com.dagger.test.TestActivity;
 
 /**
  * Created by arsen on 20.12.16.
@@ -35,13 +35,13 @@ public class SplashScreenActivity extends BaseActivity implements ISplashScreenC
 
     @Override
     public void openMainScreen() {
-        NewTestActivity.startActivity(this);
+        TestActivity.startActivity(this);
         finish();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPresenter.destroy();
+        mPresenter.onDestroy();
     }
 }

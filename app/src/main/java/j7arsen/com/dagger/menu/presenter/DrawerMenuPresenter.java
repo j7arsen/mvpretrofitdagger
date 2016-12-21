@@ -49,7 +49,7 @@ public class DrawerMenuPresenter implements IDrawerMenuContract.Presenter {
     }
 
     @Override
-    public void destroy() {
+    public void onDestroy() {
         mDrawerMenuView = null;
         mDrawerMenuInteractor = null;
     }

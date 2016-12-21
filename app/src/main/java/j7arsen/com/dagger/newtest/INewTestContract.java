@@ -4,8 +4,6 @@ import j7arsen.com.dagger.base.contract.IBaseInteractor;
 import j7arsen.com.dagger.base.contract.IBasePresenter;
 import j7arsen.com.dagger.base.contract.IBasePresenterView;
 import j7arsen.com.dagger.data.UserData;
-import j7arsen.com.dagger.rest.observable.IObserver;
-import rx.Observable;
 
 /**
  * Created by arsen on 15.12.16.
@@ -21,7 +19,7 @@ public interface INewTestContract {
         void errorLoading(Throwable e);
     }
 
-    interface Presenter extends IBasePresenter {
+    interface Presenter extends IBasePresenter{
         void onCreate();
         void getUserData();
     }

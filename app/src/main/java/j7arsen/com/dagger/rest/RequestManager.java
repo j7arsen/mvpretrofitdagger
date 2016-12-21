@@ -1,13 +1,9 @@
 package j7arsen.com.dagger.rest;
 
 
-import java.util.concurrent.TimeUnit;
-
-import j7arsen.com.dagger.app.Constants;
 import j7arsen.com.dagger.rest.observable.IRequestCallback;
 import j7arsen.com.dagger.rest.service.GetUserService;
 import retrofit2.Retrofit;
-import rx.Observable;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -38,10 +34,6 @@ public class RequestManager {
         this.mRetrofit = retrofit;
     }
 
-    public void getSplashTimer(int action, IRequestCallback requestCallback){
-        mSubscription = Observable.timer(Constants.SPLASH_TIMEOUT, TimeUnit.SECONDS).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(a -> successResponse(requestCallback, null), e -> onError(requestCallback, action, e));
-    }
-
     public <S> S createService(Class<S> serviceClass) {
         return mRetrofit.create(serviceClass);
     }
@@ -53,12 +45,12 @@ public class RequestManager {
     }
 
     private void successResponse(IRequestCallback callback, Pair object){
-        unsubscribe(mSubscription);
+        unsubscribe();
         callback.onSuccessResponse(object);
     }
 
     private void onError(IRequestCallback callback, int action, Throwable e){
-        unsubscribe(mSubscription);
+        unsubscribe();
         callback.onErrorResponse(action, e);
     }
 
@@ -68,11 +60,10 @@ public class RequestManager {
     }
 
 
-    public void unsubscribe(Subscription subscription) {
+    public void unsubscribe() {
         if(mSubscriptions.hasSubscriptions())
-            if(!subscription.isUnsubscribed())
-                mSubscriptions.remove(subscription);
+            if(!mSubscriptions.isUnsubscribed())
+                mSubscriptions.remove(mSubscription);
     }
-
 
 }

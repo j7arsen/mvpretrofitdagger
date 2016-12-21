@@ -1,6 +1,6 @@
 package j7arsen.com.dagger.base;
 
-import j7arsen.com.dagger.rest.RequestManager;
+import j7arsen.com.dagger.managers.DataManager;
 import j7arsen.com.dagger.rest.observable.IRequestCallback;
 import j7arsen.com.dagger.rest.observable.ISubject;
 
@@ -10,11 +10,11 @@ import j7arsen.com.dagger.rest.observable.ISubject;
 
 public abstract class BaseRequest implements IRequestCallback {
 
-    protected RequestManager mRequestManager;
+    protected DataManager mDataManager;
     protected ISubject mObservable;
 
-    public BaseRequest(RequestManager manager, ISubject subject){
-        this.mRequestManager = manager;
+    public BaseRequest(DataManager manager, ISubject subject){
+        this.mDataManager = manager;
         this.mObservable = subject;
     }
 
