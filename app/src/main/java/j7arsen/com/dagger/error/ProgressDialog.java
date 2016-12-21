@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.rest.error;
+package j7arsen.com.dagger.error;
 
 import android.app.Activity;
 import android.app.Dialog;

@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.rest.error;
+package j7arsen.com.dagger.error;
 
 import org.json.JSONException;
 import org.json.JSONObject;

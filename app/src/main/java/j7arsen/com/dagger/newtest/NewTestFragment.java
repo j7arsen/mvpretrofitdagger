@@ -15,8 +15,8 @@ import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.base.BaseFragment;
 import j7arsen.com.dagger.data.UserData;
-import j7arsen.com.dagger.rest.error.ErrorHandler;
-import j7arsen.com.dagger.rest.error.ProgressDialogManager;
+import j7arsen.com.dagger.error.ErrorHandler;
+import j7arsen.com.dagger.error.ProgressDialogManager;
 
 /**
  * Created by arsen on 15.12.16.
