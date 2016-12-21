@@ -14,8 +14,7 @@ public abstract class BasePresenter implements IObserver {
 
     @Inject
     protected TestObservable mObservable;
-    @Inject
-    protected DataManager mDataManager;
+
 
     public void onCreate() {
         mObservable.addObserver(this);
@@ -23,12 +22,7 @@ public abstract class BasePresenter implements IObserver {
 
     public void onDestroy() {
         mObservable.removeObserver(this);
-        unsubscribe();
     }
 
-    private void unsubscribe() {
-        if (mDataManager != null) {
-            mDataManager.unsubscribeAll();
-        }
-    }
+
 }

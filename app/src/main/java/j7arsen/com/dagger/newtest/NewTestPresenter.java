@@ -6,6 +6,7 @@ import j7arsen.com.dagger.app.Action;
 import j7arsen.com.dagger.base.BasePresenter;
 import j7arsen.com.dagger.data.UserData;
 import j7arsen.com.dagger.data.Pair;
+import j7arsen.com.dagger.managers.DataManager;
 
 /**
  * Created by arsen on 15.12.16.
@@ -15,6 +16,9 @@ public class NewTestPresenter extends BasePresenter implements INewTestContract.
 
     private INewTestContract.View mNewTestView;
     private INewTestContract.Interactor mNewTestInteractor;
+
+    @Inject
+    DataManager mDataManager;
 
     @Inject
     public NewTestPresenter(INewTestContract.View view, INewTestContract.Interactor interactor) {
@@ -72,6 +76,7 @@ public class NewTestPresenter extends BasePresenter implements INewTestContract.
     @Override
     public void onDestroy() {
         super.onDestroy();
+        mDataManager.unsubscribeAll();
         mNewTestView = null;
         mNewTestInteractor = null;
     }
