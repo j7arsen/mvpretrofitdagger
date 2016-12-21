@@ -1,7 +1,7 @@
 package j7arsen.com.dagger.rest;
 
 
-import j7arsen.com.dagger.rest.observable.IRequestCallback;
+import j7arsen.com.dagger.observable.IRequestCallback;
 import j7arsen.com.dagger.rest.service.GetUserService;
 import retrofit2.Retrofit;
 import rx.Subscription;

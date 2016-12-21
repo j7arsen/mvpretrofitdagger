@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.rest.observable;
+package j7arsen.com.dagger.observable;
 
 import java.util.ArrayList;
 

@@ -3,7 +3,7 @@ package j7arsen.com.dagger.newtest;
 import javax.inject.Inject;
 
 import j7arsen.com.dagger.managers.DataManager;
-import j7arsen.com.dagger.rest.observable.TestObservable;
+import j7arsen.com.dagger.observable.TestObservable;
 import j7arsen.com.dagger.requests.GetUserNetRequest;
 
 /**

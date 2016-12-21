@@ -5,9 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 import j7arsen.com.dagger.app.Constants;
 import j7arsen.com.dagger.data.MenuData;
-import j7arsen.com.dagger.rest.Pair;
 import j7arsen.com.dagger.rest.RequestManager;
-import j7arsen.com.dagger.rest.observable.IRequestCallback;
+import j7arsen.com.dagger.observable.IRequestCallback;
 import j7arsen.com.dagger.rest.service.GetUserService;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;

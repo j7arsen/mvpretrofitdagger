@@ -1,8 +1,8 @@
 package j7arsen.com.dagger.base;
 
 import j7arsen.com.dagger.managers.DataManager;
-import j7arsen.com.dagger.rest.observable.IRequestCallback;
-import j7arsen.com.dagger.rest.observable.ISubject;
+import j7arsen.com.dagger.observable.IRequestCallback;
+import j7arsen.com.dagger.observable.ISubject;
 
 /**
  * Created by arsen on 19.12.16.
