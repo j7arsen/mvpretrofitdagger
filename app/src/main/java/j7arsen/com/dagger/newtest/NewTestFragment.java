@@ -105,7 +105,6 @@ public class NewTestFragment extends BaseFragment implements INewTestContract.Vi
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @Override

@@ -12,7 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import j7arsen.com.dagger.R;
@@ -22,13 +22,13 @@ public class ProgressDialog extends DialogFragment {
 
     public static final String TAG = "ProgressDialog.TAG";
 
-    @Bind(R.id.rl_dialog_progress)
+    @BindView(R.id.rl_dialog_progress)
     RelativeLayout rlProgress;
-    @Bind(R.id.pb_dialog_load)
+    @BindView(R.id.pb_dialog_load)
     ProgressBar pbLoad;
-    @Bind(R.id.ll_dialog_progress_error)
+    @BindView(R.id.ll_dialog_progress_error)
     LinearLayout llError;
-    @Bind(R.id.tv_dialog_progress_error)
+    @BindView(R.id.tv_dialog_progress_error)
     TextView tvError;
 
     private int mErrorCode;
@@ -77,7 +77,6 @@ public class ProgressDialog extends DialogFragment {
 
     @Override
     public void onDestroyView() {
-        ButterKnife.unbind(this);
         super.onDestroyView();
     }
 

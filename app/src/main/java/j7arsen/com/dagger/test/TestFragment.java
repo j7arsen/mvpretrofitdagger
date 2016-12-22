@@ -82,7 +82,6 @@ public class TestFragment extends BaseFragment implements ITestContract.View{
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @Override

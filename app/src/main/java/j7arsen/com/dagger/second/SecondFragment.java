@@ -95,7 +95,6 @@ public class SecondFragment extends BaseFragment implements ISecondContract.View
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @Override

@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.app.TestApplication;
@@ -31,7 +31,7 @@ import j7arsen.com.dagger.menu.adapter.DrawerMenuAdapter;
 
 public class DrawerMenuFragment extends BaseFragment implements IDrawerMenuContract.View {
 
-    @Bind(R.id.rv_drawer_menu)
+    @BindView(R.id.rv_drawer_menu)
     RecyclerView rvMenu;
 
     private Activity mActivity;
@@ -151,7 +151,6 @@ public class DrawerMenuFragment extends BaseFragment implements IDrawerMenuContr
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @Override
