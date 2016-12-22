@@ -9,7 +9,7 @@ import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.app.TestApplication;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.di.component.AppComponent;
-import j7arsen.com.dagger.test.TestActivity;
+import j7arsen.com.dagger.main.test.TestActivity;
 
 /**
  * Created by arsen on 20.12.16.

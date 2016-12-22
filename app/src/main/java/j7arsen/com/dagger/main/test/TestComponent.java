@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.test;
+package j7arsen.com.dagger.main.test;
 
 import dagger.Component;
 import j7arsen.com.dagger.di.component.AppComponent;

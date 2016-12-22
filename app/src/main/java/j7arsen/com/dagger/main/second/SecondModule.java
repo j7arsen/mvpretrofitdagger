@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.second;
+package j7arsen.com.dagger.main.second;
 
 import dagger.Module;
 import dagger.Provides;

@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.test;
+package j7arsen.com.dagger.main.test;
 
 import j7arsen.com.dagger.base.contract.IBasePresenter;
 import j7arsen.com.dagger.base.contract.IBasePresenterView;

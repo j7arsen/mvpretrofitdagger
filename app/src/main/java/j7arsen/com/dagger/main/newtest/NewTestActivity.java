@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.newtest;
+package j7arsen.com.dagger.main.newtest;
 
 import android.app.Activity;
 import android.app.Fragment;

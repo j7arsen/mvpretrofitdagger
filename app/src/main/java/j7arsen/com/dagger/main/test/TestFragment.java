@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.test;
+package j7arsen.com.dagger.main.test;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,7 +14,7 @@ import butterknife.OnClick;
 import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.base.BaseFragment;
-import j7arsen.com.dagger.newtest.NewTestActivity;
+import j7arsen.com.dagger.main.newtest.NewTestActivity;
 
 /**
  * Created by Arsen on 06.10.2016.

@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.second;
+package j7arsen.com.dagger.main.second;
 
 import android.app.Activity;
 import android.app.Fragment;
