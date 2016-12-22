@@ -15,7 +15,6 @@ public abstract class BasePresenter implements IObserver {
     @Inject
     protected TestObservable mObservable;
 
-
     public void onCreate() {
         mObservable.addObserver(this);
     }
