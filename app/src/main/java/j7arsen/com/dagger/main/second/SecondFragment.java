@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.base.BaseFragment;
@@ -22,6 +23,7 @@ import j7arsen.com.dagger.base.BaseFragment;
 public class SecondFragment extends BaseFragment implements ISecondContract.View {
 
     private Activity mActivity;
+    private Unbinder mUnbinder;
 
     private ISecondContract.Presenter mPresenter;
 
@@ -65,7 +67,7 @@ public class SecondFragment extends BaseFragment implements ISecondContract.View
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
     }
 
     @Override
@@ -95,6 +97,7 @@ public class SecondFragment extends BaseFragment implements ISecondContract.View
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mUnbinder.unbind();
     }
 
     @Override

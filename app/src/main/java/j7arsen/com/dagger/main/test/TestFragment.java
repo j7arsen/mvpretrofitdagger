@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.base.BaseFragment;
@@ -23,6 +24,8 @@ import j7arsen.com.dagger.main.newtest.NewTestActivity;
 public class TestFragment extends BaseFragment implements ITestContract.View{
 
     private Activity mActivity;
+
+    private Unbinder mUnbinder;
 
     private ITestContract.Presenter mPresenter;
 
@@ -66,7 +69,7 @@ public class TestFragment extends BaseFragment implements ITestContract.View{
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
     }
 
     @OnClick(R.id.btn_next_activity)
@@ -82,6 +85,7 @@ public class TestFragment extends BaseFragment implements ITestContract.View{
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mUnbinder.unbind();
     }
 
     @Override

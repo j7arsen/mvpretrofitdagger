@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.base.BaseFragment;
@@ -25,6 +26,7 @@ import j7arsen.com.dagger.error.ProgressDialogManager;
 public class NewTestFragment extends BaseFragment implements INewTestContract.View {
 
     private Activity mActivity;
+    private Unbinder mUnbinder;
 
     private INewTestContract.Presenter mPresenter;
 
@@ -64,7 +66,7 @@ public class NewTestFragment extends BaseFragment implements INewTestContract.Vi
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
     }
 
     @Override
@@ -105,6 +107,7 @@ public class NewTestFragment extends BaseFragment implements INewTestContract.Vi
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mUnbinder.unbind();
     }
 
     @Override

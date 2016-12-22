@@ -5,6 +5,7 @@ import android.support.v7.widget.Toolbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import j7arsen.com.dagger.R;
 
 /**
@@ -15,11 +16,13 @@ public abstract class BaseContainerActivity extends BaseActivity {
     @BindView(R.id.navigation_bar)
     Toolbar toolbar;
 
+    private Unbinder mUnbinder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
-        ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
         initToolbar();
 
     }
@@ -35,4 +38,10 @@ public abstract class BaseContainerActivity extends BaseActivity {
     }
 
     protected abstract void openFragment();
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUnbinder.unbind();
+    }
 }
