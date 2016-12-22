@@ -18,8 +18,8 @@ public class GetUserNetRequest extends BaseRequest {
     }
 
     @Override
-    public void onErrorResponse(int action, Throwable e) {
-        mObservable.notifyFailed(action, e);
+    public void onErrorResponse(Throwable e) {
+        mObservable.notifyFailed(Action.GET_USER_DATA, e);
     }
 
     @Override

@@ -41,7 +41,7 @@ public class RequestManager {
 
     public void getUserData(Class<GetUserService> serviceClass, int action, IRequestCallback requestCallback){
         mSubscription = createService(serviceClass).getUserData().subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(s -> successResponse(requestCallback, new Pair(s)), e -> onError(requestCallback, action, e));
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(s -> successResponse(requestCallback, new Pair(s)), e -> onError(requestCallback, e));
         addSubscription(mSubscription);
     }
 
@@ -50,9 +50,9 @@ public class RequestManager {
         callback.onSuccessResponse(object);
     }
 
-    private void onError(IRequestCallback callback, int action, Throwable e){
+    private void onError(IRequestCallback callback, Throwable e){
         unsubscribe();
-        callback.onErrorResponse(action, e);
+        callback.onErrorResponse(e);
     }
 
 
