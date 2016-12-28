@@ -159,10 +159,4 @@ public class DrawerMenuFragment extends BaseFragment implements IDrawerMenuContr
         mActivity = null;
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mDrawerMenuPresenter.onDestroy();
-    }
-
 }

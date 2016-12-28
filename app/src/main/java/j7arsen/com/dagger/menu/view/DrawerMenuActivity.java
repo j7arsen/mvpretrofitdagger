@@ -75,5 +75,6 @@ public class DrawerMenuActivity extends BaseActivity implements IMenuItemClickLi
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mDrawerMenuPresenter.onDestroy();
     }
 }
