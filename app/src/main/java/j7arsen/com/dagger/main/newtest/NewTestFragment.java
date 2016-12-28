@@ -116,9 +116,4 @@ public class NewTestFragment extends BaseFragment implements INewTestContract.Vi
         mActivity = null;
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mPresenter.onDestroy();
-    }
 }

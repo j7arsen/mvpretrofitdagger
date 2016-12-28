@@ -94,9 +94,4 @@ public class TestFragment extends BaseFragment implements ITestContract.View{
         mActivity = null;
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mPresenter.onDestroy();
-    }
 }

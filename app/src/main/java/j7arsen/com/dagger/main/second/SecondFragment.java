@@ -105,10 +105,4 @@ public class SecondFragment extends BaseFragment implements ISecondContract.View
         super.onDetach();
         mActivity = null;
     }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mPresenter.onDestroy();
-    }
 }

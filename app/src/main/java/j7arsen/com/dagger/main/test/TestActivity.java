@@ -64,4 +64,9 @@ public class TestActivity extends BaseContainerActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.onDestroy();
+    }
 }
