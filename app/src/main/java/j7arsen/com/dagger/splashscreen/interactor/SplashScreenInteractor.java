@@ -1,8 +1,9 @@
-package j7arsen.com.dagger.splashscreen;
+package j7arsen.com.dagger.splashscreen.interactor;
 
 import javax.inject.Inject;
 
 import j7arsen.com.dagger.managers.DataManager;
+import j7arsen.com.dagger.splashscreen.ISplashScreenContract;
 import rx.Observable;
 
 /**

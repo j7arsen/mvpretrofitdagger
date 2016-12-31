@@ -1,8 +1,11 @@
-package j7arsen.com.dagger.splashscreen;
+package j7arsen.com.dagger.splashscreen.module;
 
 import dagger.Module;
 import dagger.Provides;
 import j7arsen.com.dagger.di.scope.ViewScope;
+import j7arsen.com.dagger.splashscreen.ISplashScreenContract;
+import j7arsen.com.dagger.splashscreen.interactor.SplashScreenInteractor;
+import j7arsen.com.dagger.splashscreen.presenter.SplashScreenPresenter;
 
 /**
  * Created by arsen on 20.12.16.

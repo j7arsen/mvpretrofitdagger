@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.main.newtest;
+package j7arsen.com.dagger.main.newtest.presenter;
 
 import javax.inject.Inject;
 
@@ -6,6 +6,7 @@ import j7arsen.com.dagger.app.Action;
 import j7arsen.com.dagger.base.BasePresenter;
 import j7arsen.com.dagger.data.UserData;
 import j7arsen.com.dagger.data.Pair;
+import j7arsen.com.dagger.main.newtest.INewTestContract;
 import j7arsen.com.dagger.managers.DataManager;
 
 /**

@@ -1,8 +1,11 @@
-package j7arsen.com.dagger.main.newtest;
+package j7arsen.com.dagger.main.newtest.module;
 
 import dagger.Module;
 import dagger.Provides;
 import j7arsen.com.dagger.di.scope.ViewScope;
+import j7arsen.com.dagger.main.newtest.INewTestContract;
+import j7arsen.com.dagger.main.newtest.interactor.NewTestInterator;
+import j7arsen.com.dagger.main.newtest.presenter.NewTestPresenter;
 
 /**
  * Created by arsen on 15.12.16.

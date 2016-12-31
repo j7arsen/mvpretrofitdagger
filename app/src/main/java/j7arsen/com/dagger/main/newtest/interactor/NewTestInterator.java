@@ -1,7 +1,8 @@
-package j7arsen.com.dagger.main.newtest;
+package j7arsen.com.dagger.main.newtest.interactor;
 
 import javax.inject.Inject;
 
+import j7arsen.com.dagger.main.newtest.INewTestContract;
 import j7arsen.com.dagger.managers.DataManager;
 import j7arsen.com.dagger.observable.TestObservable;
 import j7arsen.com.dagger.requests.GetUserNetRequest;

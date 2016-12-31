@@ -8,9 +8,9 @@ import j7arsen.com.dagger.data.Pair;
 
 public interface IRequestCallback {
 
-    public void onErrorResponse(Throwable e);
+    public void onErrorResponse(int action, Throwable e);
 
-    public void onSuccessResponse(Pair successData);
+    public void onSuccessResponse(int action, Pair successData);
 
 
 }

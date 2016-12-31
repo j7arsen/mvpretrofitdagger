@@ -1,9 +1,10 @@
 package j7arsen.com.dagger.requests;
 
+import javax.inject.Inject;
+
 import j7arsen.com.dagger.app.Action;
 import j7arsen.com.dagger.base.BaseRequest;
 import j7arsen.com.dagger.managers.DataManager;
-import j7arsen.com.dagger.data.Pair;
 import j7arsen.com.dagger.observable.ISubject;
 import j7arsen.com.dagger.rest.service.GetUserService;
 
@@ -15,16 +16,6 @@ public class GetUserNetRequest extends BaseRequest {
 
     public GetUserNetRequest(DataManager manager, ISubject observable){
         super(manager, observable);
-    }
-
-    @Override
-    public void onErrorResponse(Throwable e) {
-        mObservable.notifyFailed(Action.GET_USER_DATA, e);
-    }
-
-    @Override
-    public void onSuccessResponse(Pair successData) {
-        mObservable.notifySuccess(Action.GET_USER_DATA, successData);
     }
 
     public void getUserData(){

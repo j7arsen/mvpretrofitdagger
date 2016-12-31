@@ -1,7 +1,8 @@
-package j7arsen.com.dagger.splashscreen;
+package j7arsen.com.dagger.splashscreen.presenter;
 
 import javax.inject.Inject;
 
+import j7arsen.com.dagger.splashscreen.ISplashScreenContract;
 import rx.Subscription;
 import rx.subscriptions.Subscriptions;
 

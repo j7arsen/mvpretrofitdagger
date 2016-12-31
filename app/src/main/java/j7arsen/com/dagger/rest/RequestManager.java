@@ -41,18 +41,18 @@ public class RequestManager {
 
     public void getUserData(Class<GetUserService> serviceClass, int action, IRequestCallback requestCallback){
         mSubscription = createService(serviceClass).getUserData().subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(s -> successResponse(requestCallback, new Pair(s)), e -> onError(requestCallback, e));
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(s -> successResponse(requestCallback, action,  new Pair(s)), e -> onError(requestCallback, action, e));
         addSubscription(mSubscription);
     }
 
-    private void successResponse(IRequestCallback callback, Pair object){
+    private void successResponse(IRequestCallback callback, int action, Pair object){
         unsubscribe();
-        callback.onSuccessResponse(object);
+        callback.onSuccessResponse(action, object);
     }
 
-    private void onError(IRequestCallback callback, Throwable e){
+    private void onError(IRequestCallback callback, int action, Throwable e){
         unsubscribe();
-        callback.onErrorResponse(e);
+        callback.onErrorResponse(action, e);
     }
 
 

@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.main.newtest;
+package j7arsen.com.dagger.main.newtest.view;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -13,6 +13,9 @@ import j7arsen.com.dagger.app.TestApplication;
 import j7arsen.com.dagger.base.BaseContainerActivity;
 import j7arsen.com.dagger.base.BaseFragment;
 import j7arsen.com.dagger.di.component.AppComponent;
+import j7arsen.com.dagger.main.newtest.DaggerNewTestComponent;
+import j7arsen.com.dagger.main.newtest.INewTestContract;
+import j7arsen.com.dagger.main.newtest.module.NewTestModule;
 
 /**
  * Created by arsen on 15.12.16.

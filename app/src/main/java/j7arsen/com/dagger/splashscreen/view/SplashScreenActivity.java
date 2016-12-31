@@ -1,4 +1,4 @@
-package j7arsen.com.dagger.splashscreen;
+package j7arsen.com.dagger.splashscreen.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,13 +9,16 @@ import j7arsen.com.dagger.R;
 import j7arsen.com.dagger.app.TestApplication;
 import j7arsen.com.dagger.base.BaseActivity;
 import j7arsen.com.dagger.di.component.AppComponent;
-import j7arsen.com.dagger.main.test.TestActivity;
+import j7arsen.com.dagger.main.test.view.TestActivity;
+import j7arsen.com.dagger.splashscreen.DaggerSplashScreenComponent;
+import j7arsen.com.dagger.splashscreen.ISplashScreenContract;
+import j7arsen.com.dagger.splashscreen.module.SplashScreenModule;
 
 /**
  * Created by arsen on 20.12.16.
  */
 
-public class SplashScreenActivity extends BaseActivity implements ISplashScreenContract.View{
+public class SplashScreenActivity extends BaseActivity implements ISplashScreenContract.View {
 
     @Inject
     ISplashScreenContract.Presenter mPresenter;
