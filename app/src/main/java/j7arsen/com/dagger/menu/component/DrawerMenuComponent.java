@@ -15,7 +15,7 @@ import j7arsen.com.dagger.menu.view.DrawerMenuActivity;
 public interface DrawerMenuComponent {
 
     void inject(DrawerMenuActivity drawerMenuActivity);
-    IDrawerMenuContract.View provideDrawerMenuInteractor();
+    IDrawerMenuContract.Interactor provideDrawerMenuInteractor();
     IDrawerMenuContract.Presenter provideDrawerMenuPresenter();
 
 }
